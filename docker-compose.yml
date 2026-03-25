@@ -1,0 +1,10 @@
+services:
+  aldarexchange-callcenter:
+    build: .
+    ports:
+      - "6086:6086"
+    env_file:
+      - .env
+    volumes:
+      - ./recordings:/app/recordings
+    restart: unless-stopped
