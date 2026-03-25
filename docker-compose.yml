@@ -2,7 +2,7 @@ services:
   aldarexchange-callcenter:
     build: .
     ports:
-      - "6086:6086"
+      - "7006:7006"
     env_file:
       - .env
     volumes:

@@ -13,6 +13,6 @@ COPY . .
 
 RUN mkdir -p recordings/user recordings/agent recordings/analysis
 
-EXPOSE 6086
+EXPOSE 7006
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "6086"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "7006"]
