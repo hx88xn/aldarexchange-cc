@@ -13,7 +13,7 @@ async def transcribe_audio(file_path: str):
         transcription = await client.audio.transcriptions.create(
             model="whisper-1",
             file=audio_file,
-            prompt="The conversation may be in English or Arabic. Transcribe accurately in the same language without translating."
+            prompt="Audio contains only English and/or Arabic. Transcribe in the same language without translating."
         )
     return transcription.text
 
@@ -29,6 +29,8 @@ async def analyze_call_with_llm(call_id: str, user_transcript: str, agent_transc
 
     system_prompt = """
 You are a professional call quality analysis system for Al Dar Exchange contact center (Qatar).
+
+Calls use English and Arabic only; treat other languages as unusual when scoring.
 
 The conversation is provided in two separate blocks:
 - Agent transcript: utterances spoken by the exchange agent.

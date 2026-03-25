@@ -183,7 +183,7 @@ async def handle_incoming_call(request: Request):
     }
     
     response = VoiceResponse()
-    # Initial greeting supports English, Urdu, and Arabic - the AI will detect language automatically
+    # Recording notice is in English; the AI handles English and Arabic only on the stream.
     response.say("This call may be recorded for quality purposes.", voice='Polly.Danielle-Generative', language='en-US')
     response.pause(length=1)
     host = request.url.hostname
