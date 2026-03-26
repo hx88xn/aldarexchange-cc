@@ -43,7 +43,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Gulzar&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Gulzar&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Roboto:ital,wght@0,400;0,500;0,700&display=swap"
       rel="stylesheet"
     />
 
@@ -53,9 +53,22 @@
         theme: {
           extend: {
             colors: {
-              "#0056b3": "#0f4c75",
-              "#003d82": "#082032",
-              "#ffc107": "#d4af37",
+              aldar: {
+                navy: "#0c1f35",
+                blue: "#154a75",
+                blueDeep: "#0a2540",
+                gold: "#b8952e",
+                goldBright: "#d4af37",
+                cream: "#f4f2ec",
+                paper: "#faf9f7",
+              },
+            },
+            fontFamily: {
+              sans: ['"Source Sans 3"', "Roboto", "system-ui", "sans-serif"],
+            },
+            boxShadow: {
+              aldar: "0 4px 24px rgba(12, 31, 53, 0.08)",
+              "aldar-lg": "0 12px 40px rgba(12, 31, 53, 0.12)",
             },
             animation: {
               "pulse-slow": "pulse 2.5s ease-in-out infinite",
@@ -78,7 +91,7 @@
     </script>
     <style>
       body {
-        font-family: "Roboto", "Open Sans", "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-family: "Source Sans 3", Roboto, system-ui, sans-serif;
       }
 
       [dir="rtl"] {
@@ -117,20 +130,20 @@
         width: 20px;
         height: 20px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #0f4c75, #082032);
+        background: linear-gradient(135deg, #154a75, #0c1f35);
         cursor: pointer;
-        border: 3px solid white;
-        box-shadow: 0 2px 8px rgba(15, 76, 117, 0.35);
+        border: 3px solid #faf9f7;
+        box-shadow: 0 2px 8px rgba(12, 31, 53, 0.35);
       }
 
       .slider::-moz-range-thumb {
         width: 20px;
         height: 20px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #0f4c75, #082032);
+        background: linear-gradient(135deg, #154a75, #0c1f35);
         cursor: pointer;
-        border: 3px solid white;
-        box-shadow: 0 2px 8px rgba(15, 76, 117, 0.35);
+        border: 3px solid #faf9f7;
+        box-shadow: 0 2px 8px rgba(12, 31, 53, 0.35);
       }
 
       @keyframes blink {
@@ -151,18 +164,18 @@
     </style>
   </head>
 
-  <body class="h-full bg-gradient-to-br from-gray-50 to-gray-100 flex flex-col">
+  <body class="h-full bg-gradient-to-b from-aldar-cream via-aldar-paper to-white flex flex-col antialiased text-slate-800">
     <!-- Login Modal -->
     <div
       id="loginModal"
       class="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm z-[100] flex items-center justify-center p-4"
       style="display: flex"
     >
-      <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 animate-slide-up">
+      <div class="bg-white rounded-2xl shadow-aldar-lg ring-1 ring-aldar-gold/20 max-w-md w-full p-8 animate-slide-up">
         <!-- Logo/Header -->
         <div class="text-center mb-8">
           <div
-            class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-#0056b3 to-#003d82 rounded-full shadow-lg mx-auto mb-4"
+            class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-aldar-blue to-aldar-navy rounded-full shadow-lg ring-2 ring-aldar-goldBright/50 mx-auto mb-4"
           >
             <svg class="w-10 h-10 fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path
@@ -192,7 +205,7 @@
               name="username"
               required
               autocomplete="username"
-              class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-#0056b3 focus:ring-2 focus:ring-#0056b3/20 outline-none transition-all duration-200"
+              class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-aldar-blue focus:ring-2 focus:ring-aldar-blue/20 outline-none transition-all duration-200"
               placeholder="Enter your username / اپنا صارف نام درج کریں / أدخل اسم المستخدم"
             />
           </div>
@@ -207,7 +220,7 @@
               name="password"
               required
               autocomplete="current-password"
-              class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-#0056b3 focus:ring-2 focus:ring-#0056b3/20 outline-none transition-all duration-200"
+              class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-aldar-blue focus:ring-2 focus:ring-aldar-blue/20 outline-none transition-all duration-200"
               placeholder="Enter your password / اپنا پاس ورڈ درج کریں / أدخل كلمة المرور"
             />
           </div>
@@ -232,7 +245,7 @@
           <button
             type="submit"
             id="loginBtn"
-            class="w-full bg-gradient-to-r from-#0056b3 to-#003d82 text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:shadow-xl hover:from-#ffc107 hover:to-#0056b3 transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2"
+            class="w-full bg-gradient-to-r from-aldar-blue to-aldar-blueDeep text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:shadow-xl hover:from-aldar-goldBright hover:to-aldar-blue transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2"
           >
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
@@ -249,10 +262,13 @@
     </div>
 
     <!-- Header -->
-    <header class="bg-gradient-to-r from-#0056b3 to-#003d82 shadow-xl sticky top-0 z-50">
+    <header class="bg-aldar-navy border-b-2 border-aldar-goldBright shadow-aldar sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
         <div class="flex items-center gap-3">
-          <span class="text-white font-bold text-lg tracking-tight">Al Dar Exchange</span>
+          <span class="text-white font-semibold text-lg tracking-wide">Al Dar Exchange</span>
+          <span class="hidden sm:inline text-aldar-goldBright/90 text-xs font-medium uppercase tracking-wider"
+            >Voice support</span
+          >
         </div>
         <div class="flex items-center gap-3">
           <div
@@ -290,11 +306,11 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
           <!-- Left Column: Call Controls -->
           <div class="lg:col-span-1">
-            <div class="bg-white rounded-xl shadow-lg p-4 lg:p-6 border-t-4 border-#0056b3">
+            <div class="bg-white rounded-xl shadow-aldar p-4 lg:p-6 border border-slate-200/70 border-t-4 border-t-aldar-goldBright">
               <!-- Call Icon -->
               <div class="text-center mb-4">
                 <div
-                  class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-#0056b3 to-#003d82 rounded-full shadow-lg mx-auto mb-3"
+                  class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-aldar-blue to-aldar-navy rounded-full shadow-lg ring-2 ring-aldar-goldBright/40 mx-auto mb-3"
                 >
                   <svg class="w-8 h-8 fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path
@@ -322,7 +338,7 @@
                     >
                     <span
                       id="tempValue"
-                      class="text-xs font-bold text-#0056b3 bg-green-100 px-2 py-0.5 rounded"
+                      class="text-xs font-bold text-aldar-navy bg-aldar-cream px-2 py-0.5 rounded border border-aldar-gold/30"
                       >0.8</span
                     >
                   </div>
@@ -345,7 +361,7 @@
                     >
                     <span
                       id="speedValue"
-                      class="text-xs font-bold text-#0056b3 bg-green-100 px-2 py-0.5 rounded"
+                      class="text-xs font-bold text-aldar-navy bg-aldar-cream px-2 py-0.5 rounded border border-aldar-gold/30"
                       >1.05x</span
                     >
                   </div>
@@ -365,7 +381,7 @@
               <div class="space-y-2 mb-4">
                 <button
                   id="startBtn"
-                  class="w-full bg-gradient-to-r from-#0056b3 to-#003d82 text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:shadow-xl hover:from-#ffc107 hover:to-#0056b3 transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2"
+                  class="w-full bg-gradient-to-r from-aldar-blue to-aldar-blueDeep text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:shadow-xl hover:from-aldar-goldBright hover:to-aldar-blue transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2"
                 >
                   <svg
                     class="w-5 h-5"
@@ -423,9 +439,9 @@
           <!-- Right Column: Voice Selection, Analysis & Services -->
           <div class="lg:col-span-2 space-y-4">
             <!-- Voice Selection -->
-            <div class="bg-white rounded-xl shadow-lg p-4 lg:p-6 border-t-4 border-#0056b3">
+            <div class="bg-white rounded-xl shadow-aldar p-4 lg:p-6 border border-slate-200/70 border-t-4 border-t-aldar-goldBright">
               <h2 class="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2">
-                <svg class="w-6 h-6 text-#0056b3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-6 h-6 text-aldar-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -440,7 +456,7 @@
               <div class="relative">
                 <button
                   id="voiceDropdownBtn"
-                  class="w-full bg-gradient-to-br from-white to-gray-50 border-2 border-gray-200 rounded-lg p-4 text-left cursor-pointer transition-all duration-200 hover:border-#ffc107 hover:shadow-md flex items-center justify-between"
+                  class="w-full bg-gradient-to-br from-white to-aldar-paper border-2 border-slate-200 rounded-lg p-4 text-left cursor-pointer transition-all duration-200 hover:border-aldar-goldBright hover:shadow-aldar flex items-center justify-between"
                   onclick="toggleVoiceDropdown()"
                 >
                   <div id="selectedVoiceDisplay" class="flex-1">
@@ -470,7 +486,7 @@
                 <!-- Dropdown Menu -->
                 <div
                   id="voiceDropdownMenu"
-                  class="hidden absolute z-10 w-full mt-2 bg-white rounded-lg shadow-xl border-2 border-gray-200 max-h-80 overflow-y-auto"
+                  class="hidden absolute z-10 w-full mt-2 bg-white rounded-lg shadow-aldar-lg border border-slate-200 max-h-80 overflow-y-auto"
                 >
                   <div id="voiceGrid" class="p-2 space-y-2"></div>
                 </div>
@@ -480,11 +496,11 @@
             <!-- Analysis Section -->
             <div
               id="analysisContainer"
-              class="hidden bg-white rounded-xl shadow-lg p-4 lg:p-6 border-t-4 border-#0056b3"
+              class="hidden bg-white rounded-xl shadow-aldar p-4 lg:p-6 border border-slate-200/70 border-t-4 border-t-aldar-goldBright"
             >
               <div class="flex items-center justify-between">
                 <h2 class="text-lg font-bold text-gray-900 flex items-center gap-2">
-                  <svg class="w-6 h-6 text-#0056b3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-6 h-6 text-aldar-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -492,13 +508,13 @@
                       d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
                     />
                   </svg>
-                  <span class="bg-gradient-to-r from-#0056b3 to-#003d82 bg-clip-text text-transparent"
+                  <span class="bg-gradient-to-r from-aldar-blue to-aldar-blueDeep bg-clip-text text-transparent"
                     >Call Analysis / <span dir="rtl">کال کا تجزیہ</span></span
                   >
                 </h2>
                 <button
                   id="loadLastCallBtn"
-                  class="hidden bg-gradient-to-r from-#0056b3 to-#003d82 text-white text-xs font-semibold px-4 py-2 rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2"
+                  class="hidden bg-gradient-to-r from-aldar-blue to-aldar-blueDeep text-white text-xs font-semibold px-4 py-2 rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2"
                 >
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
@@ -514,7 +530,7 @@
               <div id="analysisContent" class="grid grid-cols-1 gap-3">
                 <div class="text-center py-8 text-gray-500">
                   <svg
-                    class="w-12 h-12 mx-auto mb-3 animate-spin text-#0056b3"
+                    class="w-12 h-12 mx-auto mb-3 animate-spin text-aldar-blue"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -532,9 +548,9 @@
             </div>
 
             <!-- Quick Services -->
-            <div class="bg-white rounded-xl shadow-lg p-4 lg:p-6 border-t-4 border-#0056b3">
+            <div class="bg-white rounded-xl shadow-aldar p-4 lg:p-6 border border-slate-200/70 border-t-4 border-t-aldar-goldBright">
               <h2 class="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <svg class="w-6 h-6 text-#0056b3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-6 h-6 text-aldar-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -546,37 +562,37 @@
               </h2>
               <div class="grid grid-cols-2 lg:grid-cols-3 gap-3">
                 <button
-                  class="bg-gradient-to-br from-white to-gray-50 border-2 border-gray-200 rounded-lg p-4 text-sm font-semibold text-gray-700 hover:border-#ffc107 hover:text-#0056b3 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200"
+                  class="bg-gradient-to-br from-white to-aldar-paper border-2 border-slate-200 rounded-lg p-4 text-sm font-semibold text-slate-700 hover:border-aldar-goldBright hover:text-aldar-blue hover:shadow-aldar transform hover:-translate-y-1 transition-all duration-200"
                 >
                   <div>Track transfer</div>
                   <div class="text-xs mt-1" dir="rtl">ٹرانسفر ٹریک کریں</div>
                 </button>
                 <button
-                  class="bg-gradient-to-br from-white to-gray-50 border-2 border-gray-200 rounded-lg p-4 text-sm font-semibold text-gray-700 hover:border-#ffc107 hover:text-#0056b3 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200"
+                  class="bg-gradient-to-br from-white to-aldar-paper border-2 border-slate-200 rounded-lg p-4 text-sm font-semibold text-slate-700 hover:border-aldar-goldBright hover:text-aldar-blue hover:shadow-aldar transform hover:-translate-y-1 transition-all duration-200"
                 >
                   <div>Currency rates</div>
                   <div class="text-xs mt-1" dir="rtl">شرح تبادلہ</div>
                 </button>
                 <button
-                  class="bg-gradient-to-br from-white to-gray-50 border-2 border-gray-200 rounded-lg p-4 text-sm font-semibold text-gray-700 hover:border-#ffc107 hover:text-#0056b3 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200"
+                  class="bg-gradient-to-br from-white to-aldar-paper border-2 border-slate-200 rounded-lg p-4 text-sm font-semibold text-slate-700 hover:border-aldar-goldBright hover:text-aldar-blue hover:shadow-aldar transform hover:-translate-y-1 transition-all duration-200"
                 >
                   <div>Branch locator</div>
                   <div class="text-xs mt-1" dir="rtl">شاخیں</div>
                 </button>
                 <button
-                  class="bg-gradient-to-br from-white to-gray-50 border-2 border-gray-200 rounded-lg p-4 text-sm font-semibold text-gray-700 hover:border-#ffc107 hover:text-#0056b3 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200"
+                  class="bg-gradient-to-br from-white to-aldar-paper border-2 border-slate-200 rounded-lg p-4 text-sm font-semibold text-slate-700 hover:border-aldar-goldBright hover:text-aldar-blue hover:shadow-aldar transform hover:-translate-y-1 transition-all duration-200"
                 >
                   <div>Customer portal</div>
                   <div class="text-xs mt-1" dir="rtl">کسٹمر پورٹل</div>
                 </button>
                 <button
-                  class="bg-gradient-to-br from-white to-gray-50 border-2 border-gray-200 rounded-lg p-4 text-sm font-semibold text-gray-700 hover:border-#ffc107 hover:text-#0056b3 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200"
+                  class="bg-gradient-to-br from-white to-aldar-paper border-2 border-slate-200 rounded-lg p-4 text-sm font-semibold text-slate-700 hover:border-aldar-goldBright hover:text-aldar-blue hover:shadow-aldar transform hover:-translate-y-1 transition-all duration-200"
                 >
                   <div>Al Dar app</div>
                   <div class="text-xs mt-1" dir="rtl">التطبيق</div>
                 </button>
                 <button
-                  class="bg-gradient-to-br from-white to-gray-50 border-2 border-gray-200 rounded-lg p-4 text-sm font-semibold text-gray-700 hover:border-#ffc107 hover:text-#0056b3 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200"
+                  class="bg-gradient-to-br from-white to-aldar-paper border-2 border-slate-200 rounded-lg p-4 text-sm font-semibold text-slate-700 hover:border-aldar-goldBright hover:text-aldar-blue hover:shadow-aldar transform hover:-translate-y-1 transition-all duration-200"
                 >
                   <div>Other Queries</div>
                   <div class="text-xs mt-1" dir="rtl">دیگر سوالات</div>
@@ -596,12 +612,12 @@
       onclick="if(event.target === this) closeAnalysisModal()"
     >
       <div
-        class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col"
+        class="bg-white rounded-2xl shadow-aldar-lg ring-1 ring-aldar-gold/15 max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col"
         onclick="event.stopPropagation()"
       >
         <!-- Modal Header -->
-        <div class="bg-gradient-to-r from-#0056b3 to-#003d82 p-4 lg:p-6 flex items-center justify-between">
-          <h2 class="text-xl font-bold text-white flex items-center gap-2">
+        <div class="bg-aldar-navy border-b-2 border-aldar-goldBright p-4 lg:p-6 flex items-center justify-between">
+          <h2 class="text-xl font-semibold text-white flex items-center gap-2">
             <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 stroke-linecap="round"
@@ -628,10 +644,10 @@
         </div>
 
         <!-- Modal Content -->
-        <div id="modalAnalysisContent" class="flex-1 overflow-y-auto p-4 lg:p-6 bg-gray-50">
+        <div id="modalAnalysisContent" class="flex-1 overflow-y-auto p-4 lg:p-6 bg-aldar-paper/80">
           <div class="text-center py-8 text-gray-500">
             <svg
-              class="w-12 h-12 mx-auto mb-3 animate-spin text-#0056b3"
+              class="w-12 h-12 mx-auto mb-3 animate-spin text-aldar-blue"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -1014,8 +1030,8 @@
             const isSelected = key === selectedVoice;
             card.className = `voice-card relative p-3 rounded-lg border-2 cursor-pointer transition-all duration-200 ${
               isSelected
-                ? "border-#0056b3 bg-gradient-to-br from-green-50 to-green-100"
-                : "border-gray-200 bg-white hover:border-#ffc107 hover:bg-green-50"
+                ? "border-aldar-goldBright bg-gradient-to-br from-aldar-cream to-white shadow-aldar"
+                : "border-gray-200 bg-white hover:border-aldar-goldBright hover:bg-aldar-cream/50"
             }`;
             card.dataset.voice = key;
 
@@ -1029,13 +1045,24 @@
               if (!this.classList.contains("disabled")) {
                 // Update all cards
                 document.querySelectorAll(".voice-card").forEach((c) => {
-                  c.classList.remove("border-#0056b3", "bg-gradient-to-br", "from-green-50", "to-green-100");
+                  c.classList.remove(
+                    "border-aldar-goldBright",
+                    "bg-gradient-to-br",
+                    "from-aldar-cream",
+                    "to-white",
+                    "shadow-aldar"
+                  );
                   c.classList.add("border-gray-200", "bg-white");
                 });
 
-                // Highlight selected card
                 this.classList.remove("border-gray-200", "bg-white");
-                this.classList.add("border-#0056b3", "bg-gradient-to-br", "from-green-50", "to-green-100");
+                this.classList.add(
+                  "border-aldar-goldBright",
+                  "bg-gradient-to-br",
+                  "from-aldar-cream",
+                  "to-white",
+                  "shadow-aldar"
+                );
 
                 // Update selected voice
                 selectedVoice = this.dataset.voice;
@@ -1123,7 +1150,7 @@
             console.log("🔄 Opening modal with loading state...");
             targetContainer.innerHTML = `
               <div class="text-center py-8 text-gray-500">
-                <svg class="w-12 h-12 mx-auto mb-3 animate-spin text-#0056b3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-12 h-12 mx-auto mb-3 animate-spin text-aldar-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
                 <div class="text-sm font-semibold">Loading analysis for call ${callId}...</div>
@@ -1134,7 +1161,7 @@
             analysisContainer.classList.remove("hidden");
             targetContainer.innerHTML = `
               <div style="text-align: center; padding: 30px; color: #718096">
-                <svg class="w-12 h-12 mx-auto mb-3 animate-spin text-#0056b3" style="margin: 0 auto 10px auto; display: inline-block;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-12 h-12 mx-auto mb-3 animate-spin text-aldar-blue" style="margin: 0 auto 10px auto; display: inline-block;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
                 <div style="font-size: 13px; font-weight: 600">Loading analysis for call ${callId}...</div>
@@ -1236,17 +1263,17 @@
           const timeString = `${minutes}:${String(seconds).padStart(2, "0")}`;
 
           analysisContent.innerHTML = `
-            <div class="text-center p-8 rounded-xl border-2 border-#0056b3 bg-gradient-to-br from-green-50 to-green-100">
-              <svg class="w-16 h-16 mx-auto mb-4 text-#0056b3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="text-center p-8 rounded-xl border-2 border-aldar-gold/40 bg-gradient-to-br from-aldar-cream to-white shadow-aldar">
+              <svg class="w-16 h-16 mx-auto mb-4 text-aldar-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <div class="text-lg font-bold mb-2 text-blue-900">Analysis in Progress</div>
-              <div class="text-sm text-blue-800 mb-4">
+              <div class="text-lg font-bold mb-2 text-aldar-navy">Analysis in Progress</div>
+              <div class="text-sm text-slate-600 mb-4">
                 Your call is being analyzed by AI.<br/>
-                Analysis will be ready in approximately <span class="font-mono font-bold text-lg">${timeString}</span>
+                Analysis will be ready in approximately <span class="font-mono font-bold text-lg text-aldar-blue">${timeString}</span>
               </div>
-              <div class="w-full bg-blue-200 rounded-full h-2 overflow-hidden">
-                <div class="bg-gradient-to-r from-#0056b3 to-#003d82 h-full rounded-full transition-all duration-1000" 
+              <div class="w-full bg-aldar-blue/15 rounded-full h-2 overflow-hidden">
+                <div class="bg-gradient-to-r from-aldar-gold to-aldar-blue h-full rounded-full transition-all duration-1000" 
                      style="width: ${((60 - secondsRemaining) / 60) * 100}%"></div>
               </div>
             </div>
@@ -1499,8 +1526,8 @@
                     (item) => `
                   <li style="margin-bottom: 4px; padding: 6px 8px; background: ${
                     depth === 0 ? "#f7fafc" : "#edf2f7"
-                  }; border-radius: 6px; border-left: 2px solid #667eea; position: relative; padding-left: 20px;">
-                    <span style="position: absolute; left: 8px; top: 6px; color: #667eea; font-weight: bold; font-size: 12px;">•</span>
+                  }; border-radius: 6px; border-left: 2px solid #b8952e; position: relative; padding-left: 20px;">
+                    <span style="position: absolute; left: 8px; top: 6px; color: #154a75; font-weight: bold; font-size: 12px;">•</span>
                     ${typeof item === "object" ? renderValue(item, depth + 1) : item}
                   </li>
                 `
@@ -1585,7 +1612,7 @@
           title,
           content,
           icon = "📄",
-          gradient = "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+          gradient = "linear-gradient(135deg, #154a75 0%, #0c1f35 100%)"
         ) => {
           const delay = cardIndex * 0.06;
           cardIndex++;
@@ -1615,7 +1642,7 @@
                   align-items: center;
                   justify-content: center;
                   font-size: 16px;
-                  box-shadow: 0 2px 6px rgba(102, 126, 234, 0.25);
+                  box-shadow: 0 2px 6px rgba(21, 74, 117, 0.25);
                 ">${icon}</div>
                 <h4 style="margin: 0; color: #1a202c; font-size: 13px; font-weight: 700;">${title}</h4>
               </div>
@@ -1632,7 +1659,7 @@
             "Call Summary",
             `<p style="margin: 0; font-size: 12px; line-height: 1.5; color: #2d3748;">${analysisData.summary}</p>`,
             '<svg style="width:16px;height:16px;color:white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>',
-            "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+            "linear-gradient(135deg, #154a75 0%, #0c1f35 100%)"
           );
         }
 
@@ -1672,9 +1699,9 @@
             sentimentIcon =
               '<svg style="width:16px;height:16px;color:white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>';
             sentimentDisplay = "😐";
-            sentimentGradient = "linear-gradient(135deg, #4299e1 0%, #3182ce 100%)";
-            sentimentBg = "#bee3f8";
-            sentimentColor = "#2c5282";
+            sentimentGradient = "linear-gradient(135deg, #154a75 0%, #0c1f35 100%)";
+            sentimentBg = "#e8eef3";
+            sentimentColor = "#0c1f35";
           }
 
           htmlContent += createCard(
@@ -1710,7 +1737,7 @@
                   padding: 8px 10px 8px 32px;
                   background: linear-gradient(135deg, #f7fafc 0%, #ffffff 100%);
                   border-radius: 8px;
-                  border-left: 3px solid #4facfe;
+                  border-left: 3px solid #b8952e;
                   position: relative;
                   transition: transform 0.2s;
                 " onmouseover="this.style.transform='translateX(2px)'" onmouseout="this.style.transform='translateX(0)'">
@@ -1721,7 +1748,7 @@
                     transform: translateY(-50%);
                     width: 18px;
                     height: 18px;
-                    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+                    background: linear-gradient(135deg, #154a75 0%, #0c1f35 100%);
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
@@ -1741,7 +1768,7 @@
             "Key Discussion Points",
             keyPointsContent,
             '<svg style="width:16px;height:16px;color:white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" /></svg>',
-            "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
+            "linear-gradient(135deg, #b8952e 0%, #154a75 100%)"
           );
         }
 
@@ -1839,7 +1866,7 @@
               </div>
             </div>`,
             '<svg style="width:16px;height:16px;color:white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>',
-            "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+            "linear-gradient(135deg, #154a75 0%, #0c1f35 100%)"
           );
         } else {
           console.warn("⚠️ No numeric metrics detected in analysis data");
@@ -1859,11 +1886,11 @@
             '<svg style="width:16px;height:16px;color:white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" /></svg>',
           ];
           const gradients = [
-            "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
-            "linear-gradient(135deg, #30cfd0 0%, #330867 100%)",
-            "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)",
-            "linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)",
-            "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)",
+            "linear-gradient(135deg, #154a75 0%, #0a2540 100%)",
+            "linear-gradient(135deg, #b8952e 0%, #8a6d1f 100%)",
+            "linear-gradient(135deg, #1a5c8f 0%, #0c1f35 100%)",
+            "linear-gradient(135deg, #c9a227 0%, #154a75 100%)",
+            "linear-gradient(135deg, #0c1f35 0%, #154a75 100%)",
           ];
           const icon = icons[Object.keys(otherFields).indexOf(key) % icons.length];
           const gradient = gradients[Object.keys(otherFields).indexOf(key) % gradients.length];
